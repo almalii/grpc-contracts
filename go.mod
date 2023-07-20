@@ -1,4 +1,4 @@
-module develop-gRPC
+module notes-gRPC
 
 go 1.20
 
