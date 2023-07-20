@@ -1,6 +1,6 @@
 module notes-gRPC
 
-go 1.21rc2
+go 1.20
 
 require (
 	google.golang.org/genproto/googleapis/api v0.0.0-20230717213848-3f92550aa753
