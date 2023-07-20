@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package auth_service.service.v1;
+
+message SignUpRequest {
+  string username = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message SignUpResponse {
+  string id = 1;
+}
+
+message SignInRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message SignInResponse {
+  string id = 1;
+}

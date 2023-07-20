@@ -1,4 +1,4 @@
-module notes-gRPC
+module almalii
 
 go 1.20
 
