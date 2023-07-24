@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "./gen/go/auth_service/model/v1"
+	v1 "github.com/almalii/grpc-contracts/tree/main/gen/go/auth_service/model/v1"
 	context "context"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
