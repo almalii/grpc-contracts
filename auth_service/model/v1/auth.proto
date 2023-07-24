@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth_service.model.v1;
 
-option go_package = "/Users/admin/GoProjects/grpc-contracts/gen/go/auth_service/model/v1";
+option go_package = "./gen/go/auth_service/model/v1";
 
 message SignUpRequest {
   string username = 1;
