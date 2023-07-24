@@ -4,7 +4,7 @@
 // - protoc             v4.23.4
 // source: auth_service/service/v1/auth.proto
 
-package v1
+package proto_auth_service
 
 import (
 	v1 "github.com/almalii/grpc-contracts/gen/go/auth_service/model/v1"
