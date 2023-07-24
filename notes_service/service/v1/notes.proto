@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package notes_service.service.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "notes_service/model/v1/notes.proto";
+
+option go_package = "github.com/almalii/grpc-contract/gen/go/notes_service/service/v1;proto_notes_service";
+
+service NotesService {
+  rpc CreateNote(model.v1.CreateNoteRequest) returns (model.v1.NoteResponse) {
+    option (google.api.http) = {
+      post: "/notes"
+      body: "*"
+    };
+  }
+  rpc GetNote(model.v1.NoteIDRequest) returns (model.v1.NoteResponse) {
+    option (google.api.http) = {
+      get: "/notes/{id}"
+      body: "*"
+    };
+  }
+  rpc GetNotes(model.v1.AuthorIDRequest) returns (stream model.v1.NoteResponse) {
+    option (google.api.http) = {
+      get: "/notes/{id}"
+      body: "*"
+    };
+  }
+  rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.NoteResponse) {
+    option (google.api.http) = {
+      put: "/notes/{id}"
+      body: "*"
+    };
+  }
+  rpc DeleteNote(model.v1.NoteIDRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/notes/{id}"
+      body: "*"
+    };
+  }
+}

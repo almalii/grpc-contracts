@@ -7,4 +7,3 @@
 
 `--go-grpc_out` *is used to generate gRPC code*
 
-

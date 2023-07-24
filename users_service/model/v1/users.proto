@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package users_service.model.v1;
+
+option go_package = "github.com/almalii/grpc-contract/gen/go/users_service/model/v1;proto_users_service";
+
+message UserIDRequest {
+  string id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message UpdateUserRequest {
+  string id = 1;
+  optional string name = 2;
+  optional string email = 3;
+  optional string password = 4;
+}
+
+message UpdateUserResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
