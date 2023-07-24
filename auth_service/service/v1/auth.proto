@@ -5,7 +5,7 @@ package auth_service.service.v1;
 import "google/api/annotations.proto";
 import "auth_service/model/v1/auth.proto";
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/auth_service/service/v1;proto_auth_service";
+option go_package = "/Users/admin/GoProjects/grpc-contracts/gen/go/auth_service/service/v1";
 
 service AuthService {
   rpc SignUp(model.v1.SignUpRequest) returns (model.v1.SignUpResponse) {
