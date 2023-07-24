@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "github.com/almalii/grpc-contracts/tree/main/gen/go/auth_service/model/v1"
+	v1 "github.com/almalii/grpc-contracts/gen/go/auth_service/model/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
