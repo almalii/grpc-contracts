@@ -6,13 +6,12 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "users_service/model/v1/users.proto";
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/users_service/service/v1;proto_users_service";
+option go_package = "github.com/almalii/grpc-contract/gen/go/users_service/service/v1;pb_users_service";
 
 service UserService {
   rpc GetUser(model.v1.UserIDRequest) returns (model.v1.UserResponse) {
     option (google.api.http) = {
       get: "/users/{id}"
-      body: "*"
     };
   }
   rpc UpdateUser(model.v1.UpdateUserRequest) returns (model.v1.UpdateUserResponse) {

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package users_service.model.v1;
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/users_service/model/v1;proto_users_service";
+option go_package = "github.com/almalii/grpc-contract/gen/go/users_service/model/v1;pb_users_service";
 
 message UserIDRequest {
   string id = 1;

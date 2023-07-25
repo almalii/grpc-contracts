@@ -6,7 +6,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "notes_service/model/v1/notes.proto";
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/notes_service/service/v1;proto_notes_service";
+option go_package = "github.com/almalii/grpc-contract/gen/go/notes_service/service/v1;pb_notes_service";
 
 service NotesService {
   rpc CreateNote(model.v1.CreateNoteRequest) returns (model.v1.NoteResponse) {
@@ -18,13 +18,11 @@ service NotesService {
   rpc GetNote(model.v1.NoteIDRequest) returns (model.v1.NoteResponse) {
     option (google.api.http) = {
       get: "/notes/{id}"
-      body: "*"
     };
   }
   rpc GetNotes(model.v1.AuthorIDRequest) returns (stream model.v1.NoteResponse) {
     option (google.api.http) = {
-      get: "/notes/{id}"
-      body: "*"
+      get: "/notes/all/{id}"
     };
   }
   rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.NoteResponse) {
