@@ -6,7 +6,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "notes_service/model/v1/notes.proto";
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/notes_service/service/v1;pb_notes_service";
+option go_package = "github.com/almalii/grpc-contracts/gen/go/notes_service/service/v1;pb_notes_service";
 
 service NotesService {
   rpc CreateNote(model.v1.CreateNoteRequest) returns (model.v1.NoteResponse) {

@@ -6,7 +6,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "users_service/model/v1/users.proto";
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/users_service/service/v1;pb_users_service";
+option go_package = "github.com/almalii/grpc-contracts/gen/go/users_service/service/v1;pb_users_service";
 
 service UserService {
   rpc GetUser(model.v1.UserIDRequest) returns (model.v1.UserResponse) {

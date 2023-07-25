@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package notes_service.model.v1;
 
-option go_package = "github.com/almalii/grpc-contract/gen/go/notes_service/model/v1;pb_notes_service";
+option go_package = "github.com/almalii/grpc-contracts/gen/go/notes_service/model/v1;pb_notes_service";
 
 message CreateNoteRequest {
   string title = 1;

@@ -8,7 +8,7 @@ package pb_notes_service
 
 import (
 	context "context"
-	v1 "github.com/almalii/grpc-contract/gen/go/notes_service/model/v1"
+	v1 "github.com/almalii/grpc-contracts/gen/go/notes_service/model/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
