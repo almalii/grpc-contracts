@@ -8,22 +8,21 @@ import "users_service/model/v1/users.proto";
 
 option go_package = "github.com/almalii/grpc-contracts/gen/go/users_service/service/v1;pb_users_service";
 
-service UserService {
+service UsersService {
   rpc GetUser(model.v1.UserIDRequest) returns (model.v1.UserResponse) {
     option (google.api.http) = {
-      get: "/users/{id}"
+      get: "/v1/users/{id}"
     };
   }
   rpc UpdateUser(model.v1.UpdateUserRequest) returns (model.v1.UpdateUserResponse) {
     option (google.api.http) = {
-      put: "/users/{id}"
+      put: "/v1/users/{id}"
       body: "*"
     };
   }
   rpc DeleteUser(model.v1.UserIDRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/users/{id}"
-      body: "*"
+      delete: "/v1/users/{id}"
     };
   }
 }

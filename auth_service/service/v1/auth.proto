@@ -10,13 +10,13 @@ option go_package = "github.com/almalii/grpc-contracts/gen/go/auth_service/servi
 service AuthService {
   rpc SignUp(model.v1.SignUpRequest) returns (model.v1.SignUpResponse) {
     option (google.api.http) = {
-      post: "/register"
+      post: "/v1/register"
       body: "*"
     };
   }
   rpc SignIn(model.v1.SignInRequest) returns (model.v1.SignInResponse) {
     option (google.api.http) = {
-      post: "/login"
+      post: "/v1/login"
       body: "*"
     };
   }

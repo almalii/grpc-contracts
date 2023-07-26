@@ -11,30 +11,29 @@ option go_package = "github.com/almalii/grpc-contracts/gen/go/notes_service/serv
 service NotesService {
   rpc CreateNote(model.v1.CreateNoteRequest) returns (model.v1.NoteResponse) {
     option (google.api.http) = {
-      post: "/notes"
+      post: "/v1/notes"
       body: "*"
     };
   }
   rpc GetNote(model.v1.NoteIDRequest) returns (model.v1.NoteResponse) {
     option (google.api.http) = {
-      get: "/notes/{id}"
+      get: "/v1/notes/{id}"
     };
   }
-  rpc GetNotes(model.v1.AuthorIDRequest) returns (stream model.v1.NoteResponse) {
+  rpc GetNotes(model.v1.AuthorIDRequest) returns (model.v1.NoteResponseList) {
     option (google.api.http) = {
-      get: "/notes/all/{id}"
+      get: "/v1/notes/all/{id}"
     };
   }
   rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.NoteResponse) {
     option (google.api.http) = {
-      put: "/notes/{id}"
+      put: "/v1/notes/{id}"
       body: "*"
     };
   }
   rpc DeleteNote(model.v1.NoteIDRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/notes/{id}"
-      body: "*"
+      delete: "/v1/notes/{id}"
     };
   }
 }
