@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/login": {
+    "/v1/login": {
       "post": {
         "operationId": "AuthService_SignIn",
         "responses": {
@@ -48,7 +48,7 @@
         ]
       }
     },
-    "/register": {
+    "/v1/register": {
       "post": {
         "operationId": "AuthService_SignUp",
         "responses": {

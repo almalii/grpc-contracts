@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/notes": {
+    "/v1/notes": {
       "post": {
         "operationId": "NotesService_CreateNote",
         "responses": {
@@ -48,23 +48,14 @@
         ]
       }
     },
-    "/notes/all/{id}": {
+    "/v1/notes/all/{id}": {
       "get": {
         "operationId": "NotesService_GetNotes",
         "responses": {
           "200": {
-            "description": "A successful response.(streaming responses)",
+            "description": "A successful response.",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "$ref": "#/definitions/v1NoteResponse"
-                },
-                "error": {
-                  "$ref": "#/definitions/rpcStatus"
-                }
-              },
-              "title": "Stream result of v1NoteResponse"
+              "$ref": "#/definitions/v1NoteResponseList"
             }
           },
           "default": {
@@ -87,7 +78,7 @@
         ]
       }
     },
-    "/notes/{id}": {
+    "/v1/notes/{id}": {
       "get": {
         "operationId": "NotesService_GetNote",
         "responses": {
@@ -139,14 +130,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object"
-            }
           }
         ],
         "tags": [
@@ -273,6 +256,18 @@
         },
         "updatedAt": {
           "type": "string"
+        }
+      }
+    },
+    "v1NoteResponseList": {
+      "type": "object",
+      "properties": {
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1NoteResponse"
+          }
         }
       }
     }

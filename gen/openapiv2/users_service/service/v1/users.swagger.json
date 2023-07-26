@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "UserService"
+      "name": "UsersService"
     }
   ],
   "consumes": [
@@ -16,9 +16,9 @@
     "application/json"
   ],
   "paths": {
-    "/users/{id}": {
+    "/v1/users/{id}": {
       "get": {
-        "operationId": "UserService_GetUser",
+        "operationId": "UsersService_GetUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -42,11 +42,11 @@
           }
         ],
         "tags": [
-          "UserService"
+          "UsersService"
         ]
       },
       "delete": {
-        "operationId": "UserService_DeleteUser",
+        "operationId": "UsersService_DeleteUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -68,22 +68,14 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object"
-            }
           }
         ],
         "tags": [
-          "UserService"
+          "UsersService"
         ]
       },
       "put": {
-        "operationId": "UserService_UpdateUser",
+        "operationId": "UsersService_UpdateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -126,7 +118,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "UsersService"
         ]
       }
     }
