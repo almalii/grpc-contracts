@@ -9,13 +9,13 @@ import "notes_service/model/v1/notes.proto";
 option go_package = "github.com/almalii/grpc-contracts/gen/go/notes_service/service/v1;pb_notes_service";
 
 service NotesService {
-  rpc CreateNote(model.v1.CreateNoteRequest) returns (model.v1.NoteResponse) {
+  rpc CreateNote(model.v1.CreateNoteRequest) returns (model.v1.NoteIDResponse) {
     option (google.api.http) = {
       post: "/v1/notes"
       body: "*"
     };
   }
-  rpc GetNote(model.v1.NoteIDRequest) returns (model.v1.NoteResponse) {
+  rpc GetNote(model.v1.NoteIDRequest) returns (model.v1.GetNoteResponse) {
     option (google.api.http) = {
       get: "/v1/notes/{id}"
     };
@@ -25,7 +25,7 @@ service NotesService {
       get: "/v1/notes/all/{id}"
     };
   }
-  rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.NoteResponse) {
+  rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.UpdateNoteResponse) {
     option (google.api.http) = {
       put: "/v1/notes/{id}"
       body: "*"

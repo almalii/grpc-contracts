@@ -9,7 +9,7 @@ import "users_service/model/v1/users.proto";
 option go_package = "github.com/almalii/grpc-contracts/gen/go/users_service/service/v1;pb_users_service";
 
 service UsersService {
-  rpc GetUser(model.v1.UserIDRequest) returns (model.v1.UserResponse) {
+  rpc GetUser(model.v1.UserIDRequest) returns (model.v1.GetUserResponse) {
     option (google.api.http) = {
       get: "/v1/users/{id}"
     };

@@ -2,16 +2,21 @@ syntax = "proto3";
 
 package users_service.model.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/almalii/grpc-contracts/gen/go/users_service/model/v1;pb_users_service";
 
 message UserIDRequest {
   string id = 1;
 }
 
-message UserResponse {
+message GetUserResponse {
   string id = 1;
   string name = 2;
   string email = 3;
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp updated_at = 5;
+
 }
 
 message UpdateUserRequest {
