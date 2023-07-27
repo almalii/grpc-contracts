@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1NoteResponse"
+              "$ref": "#/definitions/v1NoteIDResponse"
             }
           },
           "default": {
@@ -85,7 +85,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1NoteResponse"
+              "$ref": "#/definitions/v1GetNoteResponse"
             }
           },
           "default": {
@@ -142,7 +142,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1NoteResponse"
+              "$ref": "#/definitions/v1UpdateNoteResponse"
             }
           },
           "default": {
@@ -226,14 +226,18 @@
           "type": "string"
         },
         "tags": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TagsList"
+          }
         },
         "author": {
           "type": "string"
         }
       }
     },
-    "v1NoteResponse": {
+    "v1GetNoteResponse": {
       "type": "object",
       "properties": {
         "id": {
@@ -246,15 +250,29 @@
           "type": "string"
         },
         "tags": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TagsList"
+          }
         },
         "author": {
           "type": "string"
         },
         "createdAt": {
-          "type": "string"
+          "type": "string",
+          "format": "date-time"
         },
         "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1NoteIDResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
           "type": "string"
         }
       }
@@ -266,8 +284,41 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1NoteResponse"
+            "$ref": "#/definitions/v1GetNoteResponse"
           }
+        }
+      }
+    },
+    "v1TagsList": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1UpdateNoteResponse": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TagsList"
+          }
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     }

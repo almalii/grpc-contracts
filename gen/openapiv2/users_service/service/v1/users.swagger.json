@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UserResponse"
+              "$ref": "#/definitions/v1GetUserResponse"
             }
           },
           "default": {
@@ -154,7 +154,7 @@
         }
       }
     },
-    "v1UpdateUserResponse": {
+    "v1GetUserResponse": {
       "type": "object",
       "properties": {
         "id": {
@@ -165,10 +165,18 @@
         },
         "email": {
           "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     },
-    "v1UserResponse": {
+    "v1UpdateUserResponse": {
       "type": "object",
       "properties": {
         "id": {

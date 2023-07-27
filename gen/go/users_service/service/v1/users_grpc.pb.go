@@ -30,7 +30,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UsersServiceClient interface {
-	GetUser(ctx context.Context, in *v1.UserIDRequest, opts ...grpc.CallOption) (*v1.UserResponse, error)
+	GetUser(ctx context.Context, in *v1.UserIDRequest, opts ...grpc.CallOption) (*v1.GetUserResponse, error)
 	UpdateUser(ctx context.Context, in *v1.UpdateUserRequest, opts ...grpc.CallOption) (*v1.UpdateUserResponse, error)
 	DeleteUser(ctx context.Context, in *v1.UserIDRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
@@ -43,8 +43,8 @@ func NewUsersServiceClient(cc grpc.ClientConnInterface) UsersServiceClient {
 	return &usersServiceClient{cc}
 }
 
-func (c *usersServiceClient) GetUser(ctx context.Context, in *v1.UserIDRequest, opts ...grpc.CallOption) (*v1.UserResponse, error) {
-	out := new(v1.UserResponse)
+func (c *usersServiceClient) GetUser(ctx context.Context, in *v1.UserIDRequest, opts ...grpc.CallOption) (*v1.GetUserResponse, error) {
+	out := new(v1.GetUserResponse)
 	err := c.cc.Invoke(ctx, UsersService_GetUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -74,7 +74,7 @@ func (c *usersServiceClient) DeleteUser(ctx context.Context, in *v1.UserIDReques
 // All implementations must embed UnimplementedUsersServiceServer
 // for forward compatibility
 type UsersServiceServer interface {
-	GetUser(context.Context, *v1.UserIDRequest) (*v1.UserResponse, error)
+	GetUser(context.Context, *v1.UserIDRequest) (*v1.GetUserResponse, error)
 	UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error)
 	DeleteUser(context.Context, *v1.UserIDRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedUsersServiceServer()
@@ -84,7 +84,7 @@ type UsersServiceServer interface {
 type UnimplementedUsersServiceServer struct {
 }
 
-func (UnimplementedUsersServiceServer) GetUser(context.Context, *v1.UserIDRequest) (*v1.UserResponse, error) {
+func (UnimplementedUsersServiceServer) GetUser(context.Context, *v1.UserIDRequest) (*v1.GetUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
 func (UnimplementedUsersServiceServer) UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error) {
