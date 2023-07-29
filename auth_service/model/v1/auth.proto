@@ -20,5 +20,5 @@ message SignInRequest {
 }
 
 message SignInResponse {
-  string id = 1;
+  string token = 1;
 }
