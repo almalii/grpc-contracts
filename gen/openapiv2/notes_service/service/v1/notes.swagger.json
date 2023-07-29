@@ -228,8 +228,7 @@
         "tags": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1TagsList"
+            "type": "string"
           }
         },
         "author": {
@@ -252,20 +251,17 @@
         "tags": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1TagsList"
+            "type": "string"
           }
         },
         "author": {
           "type": "string"
         },
         "createdAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "updatedAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -289,17 +285,6 @@
         }
       }
     },
-    "v1TagsList": {
-      "type": "object",
-      "properties": {
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "v1UpdateNoteResponse": {
       "type": "object",
       "properties": {
@@ -312,13 +297,11 @@
         "tags": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "#/definitions/v1TagsList"
+            "type": "string"
           }
         },
         "updatedAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     }

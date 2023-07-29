@@ -9,7 +9,7 @@ option go_package = "github.com/almalii/grpc-contracts/gen/go/notes_service/mode
 message CreateNoteRequest {
   string title = 1;
   string body = 2;
-  repeated TagsList tags = 3;
+  repeated string tags = 3;
   string author = 4;
 }
 
