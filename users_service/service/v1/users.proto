@@ -16,7 +16,7 @@ service UsersService {
   }
   rpc UpdateUser(model.v1.UpdateUserRequest) returns (model.v1.UpdateUserResponse) {
     option (google.api.http) = {
-      put: "/v1/users"
+      patch: "/v1/users"
       body: "*"
     };
   }

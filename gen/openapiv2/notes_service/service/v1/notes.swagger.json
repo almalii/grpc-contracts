@@ -136,7 +136,7 @@
           "NotesService"
         ]
       },
-      "put": {
+      "patch": {
         "operationId": "NotesService_UpdateNote",
         "responses": {
           "200": {

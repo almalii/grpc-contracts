@@ -27,7 +27,7 @@ service NotesService {
   }
   rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.UpdateNoteResponse) {
     option (google.api.http) = {
-      put: "/v1/notes/{id}"
+      patch: "/v1/notes/{id}"
       body: "*"
     };
   }
