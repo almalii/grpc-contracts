@@ -22,7 +22,7 @@ service NotesService {
   }
   rpc GetNotes(model.v1.AuthorIDRequest) returns (model.v1.NoteResponseList) {
     option (google.api.http) = {
-      get: "/v1/notes/all/{id}"
+      get: "/v1/notes/all"
     };
   }
   rpc UpdateNote(model.v1.UpdateNoteRequest) returns (model.v1.UpdateNoteResponse) {
