@@ -10,7 +10,6 @@ message CreateNoteRequest {
   string title = 1;
   string body = 2;
   repeated string tags = 3;
-  string author = 4;
 }
 
 message UpdateNoteRequest {

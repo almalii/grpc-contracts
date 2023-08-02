@@ -233,9 +233,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "author": {
-          "type": "string"
         }
       }
     },
